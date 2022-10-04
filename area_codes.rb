@@ -29,7 +29,7 @@ end
 # Execution flow
 loop do
 # Write your program execution code here
-  puts "Do you want to look up an aread code based on city? (Y/N)"
+  puts "Do you want to look up an area code based on city? (Y/N)"
   answer=gets.chomp.downcase
   if answer != "y"
     return
@@ -39,6 +39,10 @@ loop do
   end
   puts "Enter your selection"
   city=gets.chomp.downcase
+  if dial_book.include?(city)
   get_area_code(dial_book, city)
+  else
+    puts "You entered an invalid city name"
+  end
 end
 
