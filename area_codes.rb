@@ -14,9 +14,7 @@ dial_book = {
 # Get city names from the hash
 def get_city_names(somehash)
 # Write code here
-  somehash.each do |key,value|
-    return city_names= somehash.keys
-  end
+  city_names= somehash.keys
   puts city_names
 end
  
@@ -24,8 +22,8 @@ end
 def get_area_code(somehash, city)
 # Write code here
   area_code = somehash.select{|k, v| k.match(city)}
-  return code= area_code[city]
- 
+  code= area_code[city]
+  puts "The area code for #{city} is #{code}"
 end
  
 # Execution flow
@@ -37,12 +35,10 @@ loop do
     return
   else 
     puts "Which city do you want the Area Code?"
-    puts get_city_names(dial_book)
+    get_city_names(dial_book)
   end
   puts "Enter your selection"
   city=gets.chomp.downcase
-  puts get_area_code(dial_book, city)
+  get_area_code(dial_book, city)
 end
 
-
-# get_area_code(dial_book)
